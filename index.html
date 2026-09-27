@@ -1051,9 +1051,7 @@ function tick() {
     if (bits.length) requestAnimationFrame(tick); else cx.clearRect(0, 0, cf.width, cf.height);
 }
 document.getElementById("celebrate").addEventListener("click", () => { burst(220); setTimeout(() => burst(140), 450); });
-</script>
-   <script>
-    // Hàm tự động cuộn trang
+       // Hàm tự động cuộn trang
     function autoScroll() {
         // Tự động cuộn xuống dưới 1 pixel mỗi lần
         window.scrollBy(0, 1); 
