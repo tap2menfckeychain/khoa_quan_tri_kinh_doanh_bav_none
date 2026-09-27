@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fffaf0">
+<title>Gửi Khoa QTKD · Tâm thư sinh viên</title>
+<meta name="description" content="Tâm thư của nhóm sinh viên năm cuối gửi tới thầy cô Khoa Quản trị Kinh doanh – Học viện Ngân hàng.">
+<meta property="og:title" content="Gửi Khoa Quản trị Kinh doanh · Tâm thư sinh viên năm cuối">
+<meta property="og:description" content="Những lời cảm ơn và những ký ức của nhóm sinh viên năm cuối gửi tới thầy cô Khoa Quản trị Kinh doanh.">
+<meta property="og:image" content="assets/photos/cktc_2025.jpg">
+<link rel="icon" href="assets/mascot.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+<style>
+/* =========================================================
+   FONT
+   - Tiêu đề: Cambria (có sẵn trên Windows / macOS có Office);
+     máy không có Cambria (điện thoại) tự dùng Noto Serif.
+   - Nội dung: Montserrat (sans serif).
+   - Chữ viết tay: UTM Zirkon.
+========================================================= */
+@font-face {
+    font-family: "UTM Zirkon";
+    src: local("UTM Zirkon"), url("assets/fonts/utm-zirkon.woff2") format("woff2");
+    font-display: swap;
+}
+/* =========================================================
+   BIẾN MÀU — tông sáng theo nhận diện BAV (xanh navy + vàng)
+========================================================= */
+:root {
+    --bg: #fffaf0;
+    --bg-2: #fff3d9;
+    --paper: #ffffff;
+    --navy: #2b2d72;
+    --navy-2: #3d40a0;
+    --ink: #22244f;
+    --muted: #666a8f;
+    --gold: #f7a823;
+    --gold-2: #ffc94d;
+    --gold-soft: #fff0cc;
+    --sky: #eaf0ff;
+    --line: rgba(43,45,114,.12);
+    --shadow: 0 18px 50px rgba(43,45,114,.12);
+    --serif: Cambria, "Noto Serif", Georgia, serif;
+    --sans: "Montserrat", "Segoe UI", Arial, sans-serif;
+    --hand: "UTM Zirkon", Cambria, "Noto Serif", serif;
+    --container: 1200px;
+    --radius: 18px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--ink); font-family: var(--sans); overflow-x: hidden; line-height: 1.6; }
+body.locked { overflow: hidden; }
+a { color: inherit; text-decoration: none; }
+button, input, textarea { font: inherit; }
+button { cursor: pointer; }
+img { display: block; max-width: 100%; }
+
+/* =========================================================
+   NỀN
+========================================================= */
+#background { position: fixed; inset: 0; z-index: -10; overflow: hidden;
+    background:
+        radial-gradient(circle at 12% 8%, rgba(247,168,35,.18), transparent 40%),
+        radial-gradient(circle at 90% 30%, rgba(61,64,160,.10), transparent 45%),
+        radial-gradient(circle at 30% 95%, rgba(255,201,77,.18), transparent 45%),
+        var(--bg); }
+.blob { position: absolute; border-radius: 50%; filter: blur(80px); opacity: .45; animation: blobMove 20s ease-in-out infinite alternate; }
+.blob-1 { width: 420px; height: 420px; background: #ffe2a3; left: -120px; top: 20%; }
+.blob-2 { width: 380px; height: 380px; background: #dfe5ff; right: -120px; top: 55%; animation-delay: -7s; }
+@keyframes blobMove { to { transform: translate3d(90px,-70px,0) scale(1.15); } }
+#sparkles { position: absolute; inset: 0; width: 100%; height: 100%; }
+#confetti { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 9000; }
+
+/* =========================================================
+   MÀN MỞ ĐẦU
+========================================================= */
+.intro { position: fixed; inset: 0; z-index: 1000; display: flex; align-items: center; justify-content: center; padding: 24px;
+    background: radial-gradient(circle at 50% 35%, #fff6df 0%, #fffaf0 55%, #f3f1ff 100%);
+    transition: opacity 1s ease, visibility 1s ease; }
+.intro.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+.intro-content { text-align: center; max-width: 720px; }
+.envelope { position: relative; width: 170px; height: 115px; margin: 0 auto 40px; background: var(--navy); border-radius: 10px; box-shadow: var(--shadow); animation: envFloat 3.2s ease-in-out infinite; }
+.envelope::before { content: ""; position: absolute; inset: 0; border-radius: 10px; background: linear-gradient(155deg, transparent 49.5%, #3d40a0 50%) , linear-gradient(205deg, transparent 49.5%, #3d40a0 50%); background-size: 50% 100%; background-position: left, right; background-repeat: no-repeat; opacity: .9; }
+.envelope::after { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 62%; background: #34368a; clip-path: polygon(0 0, 100% 0, 50% 100%); border-radius: 10px 10px 0 0; }
+.envelope .seal { position: absolute; z-index: 2; left: 50%; top: 52%; transform: translate(-50%,-50%); width: 46px; height: 46px; border-radius: 50%; background: var(--gold); color: var(--navy); display: grid; place-items: center; font-weight: 800; font-size: 15px; box-shadow: 0 4px 14px rgba(247,168,35,.6); }
+@keyframes envFloat { 50% { transform: translateY(-10px) rotate(-2deg); } }
+.intro-small { font-size: 12px; letter-spacing: .3em; color: var(--muted); text-transform: uppercase; font-weight: 600; }
+.intro h1 { font-family: var(--serif); color: var(--navy); font-size: clamp(44px, 8vw, 92px); line-height: 1.02; margin-top: 18px; font-weight: 700; }
+.intro h1 em { display: block; color: var(--gold); font-style: italic; }
+.intro p.lead { margin-top: 22px; color: var(--muted); font-size: 16px; }
+.btn { display: inline-flex; align-items: center; gap: 14px; border: 0; border-radius: 999px; padding: 15px 28px; font-weight: 700; font-size: 15px; transition: transform .3s ease, box-shadow .3s ease, background .3s; }
+.btn-gold { background: linear-gradient(135deg, var(--gold), var(--gold-2)); color: var(--navy); box-shadow: 0 10px 30px rgba(247,168,35,.4); }
+.btn-gold:hover { transform: translateY(-3px); box-shadow: 0 16px 36px rgba(247,168,35,.55); }
+.btn-navy { background: var(--navy); color: #fff; box-shadow: 0 10px 30px rgba(43,45,114,.25); }
+.btn-navy:hover { transform: translateY(-3px); background: var(--navy-2); }
+.btn-ghost { background: #fff; color: var(--navy); border: 1.5px solid var(--line); }
+.btn-ghost:hover { transform: translateY(-3px); border-color: var(--gold); }
+.intro .btn { margin-top: 36px; }
+.intro-bottom { position: absolute; bottom: 24px; left: 0; right: 0; text-align: center; font-size: 11px; letter-spacing: .25em; color: var(--muted); }
+
+/* =========================================================
+   THANH ĐIỀU HƯỚNG
+========================================================= */
+#main-content { transition: opacity 1s ease; }
+#main-content.hidden { opacity: 0; pointer-events: none; }
+.navbar { position: fixed; z-index: 100; top: 0; left: 0; right: 0; height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 0 4vw; transition: background .4s, box-shadow .4s; }
+.navbar.scrolled { background: rgba(255,250,240,.88); backdrop-filter: blur(14px); box-shadow: 0 6px 24px rgba(43,45,114,.08); }
+.brand img { height: 46px; width: auto; }
+.navbar nav { display: flex; gap: 26px; }
+.navbar nav a { font-size: 14px; font-weight: 600; color: var(--muted); position: relative; transition: color .3s; }
+.navbar nav a::after { content: ""; position: absolute; left: 0; bottom: -6px; width: 0; height: 2px; border-radius: 2px; background: var(--gold); transition: width .3s; }
+.navbar nav a:hover { color: var(--navy); }
+.navbar nav a:hover::after { width: 100%; }
+.nav-cta { padding: 10px 20px; font-size: 13px; }
+.menu-btn { display: none; width: 46px; height: 46px; border: 0; border-radius: 14px; background: #fff; box-shadow: 0 6px 18px rgba(43,45,114,.12); position: relative; flex-shrink: 0; }
+.menu-btn span, .menu-btn span::before, .menu-btn span::after { position: absolute; left: 50%; width: 20px; height: 2.5px; border-radius: 2px; background: var(--navy); transform: translateX(-50%); transition: .3s; }
+.menu-btn span { top: 50%; margin-top: -1px; }
+.menu-btn span::before, .menu-btn span::after { content: ""; left: 0; transform: none; }
+.menu-btn span::before { top: -7px; }
+.menu-btn span::after { top: 7px; }
+.menu-open .menu-btn span { background: transparent; }
+.menu-open .menu-btn span::before { top: 0; transform: rotate(45deg); }
+.menu-open .menu-btn span::after { top: 0; transform: rotate(-45deg); }
+
+/* =========================================================
+   CHUNG
+========================================================= */
+.section { width: min(var(--container), 90%); margin: 0 auto; position: relative; }
+section[id] { scroll-margin-top: 70px; }
+.pad { padding: 130px 0; }
+.eyebrow { display: inline-flex; align-items: center; gap: 10px; color: var(--gold); font-size: 12px; font-weight: 700; letter-spacing: .25em; text-transform: uppercase; }
+.eyebrow::before { content: "✦"; font-size: 14px; }
+h2.title { font-family: var(--serif); color: var(--navy); font-size: clamp(38px, 5.5vw, 68px); line-height: 1.08; font-weight: 700; margin-top: 16px; }
+h2.title em { color: var(--gold); font-style: italic; }
+.sub { color: var(--muted); font-size: 16px; max-width: 620px; margin-top: 18px; }
+.centered { text-align: center; }
+.centered .sub { margin-left: auto; margin-right: auto; }
+
+/* =========================================================
+   HERO
+========================================================= */
+.hero { min-height: 100vh; display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; gap: 50px; padding-top: 110px; padding-bottom: 60px; }
+.hero-badge { display: inline-flex; align-items: center; gap: 10px; background: #fff; border: 1px solid var(--line); border-radius: 999px; padding: 8px 16px 8px 8px; font-size: 13px; font-weight: 600; color: var(--navy); box-shadow: 0 6px 20px rgba(43,45,114,.06); }
+.hero-badge b { background: var(--navy); color: var(--gold-2); border-radius: 999px; padding: 3px 10px; font-size: 12px; }
+.hero h1 { font-family: var(--serif); color: var(--navy); font-size: clamp(46px, 6.4vw, 88px); line-height: 1.04; font-weight: 700; margin-top: 26px; letter-spacing: -.01em; }
+.hero h1 em { color: var(--gold); font-style: italic; }
+.hero p.desc { font-size: 17px; color: var(--muted); max-width: 540px; margin-top: 24px; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 36px; }
+.hero-stats { display: flex; gap: 34px; margin-top: 48px; flex-wrap: wrap; }
+.hero-stats div { border-left: 3px solid var(--gold); padding-left: 14px; }
+.hero-stats strong { display: block; font-family: var(--serif); font-size: 34px; color: var(--navy); line-height: 1; }
+.hero-stats span { display: block; margin-top: 6px; font-size: 13px; line-height: 1.35; color: var(--muted); }
+
+.hero-visual { position: relative; height: 580px; }
+.big20 { position: absolute; right: -10px; top: 0; font-family: var(--serif); font-weight: 700; font-size: 170px; line-height: 1; color: transparent; -webkit-text-stroke: 2px rgba(247,168,35,.45); user-select: none; }
+.polaroid { position: absolute; background: #fff; padding: 12px 12px 44px; border-radius: 6px; box-shadow: var(--shadow); transition: transform .5s ease; }
+.polaroid img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 3px; }
+.polaroid figcaption { position: absolute; left: 0; right: 0; bottom: 10px; text-align: center; font-family: var(--hand); font-size: 25px; line-height: 1; color: var(--navy); }
+.polaroid:hover { transform: rotate(0) scale(1.04) !important; z-index: 5; }
+.pol-1 { width: 58%; left: 0; top: 40px; transform: rotate(-7deg); }
+.pol-2 { width: 56%; right: 0; top: 150px; transform: rotate(6deg); z-index: 2; }
+.pol-3 { width: 54%; left: 16%; bottom: 0; transform: rotate(-2deg); z-index: 3; }
+.tape { position: absolute; top: -12px; left: 50%; width: 90px; height: 26px; transform: translateX(-50%) rotate(-3deg); background: rgba(247,168,35,.55); border-radius: 3px; }
+.mascot { position: absolute; right: -2%; bottom: -10px; width: 150px; z-index: 6; animation: wave 3.4s ease-in-out infinite; filter: drop-shadow(0 12px 20px rgba(43,45,114,.25)); }
+.bubble { position: absolute; right: 140px; bottom: 150px; z-index: 6; background: #fff; color: var(--navy); font-weight: 700; font-size: 14px; padding: 10px 16px; border-radius: 16px 16px 4px 16px; box-shadow: var(--shadow); animation: wave 3.4s ease-in-out infinite; }
+@keyframes wave { 50% { transform: translateY(-12px); } }
+
+/* =========================================================
+   BĂNG CHỮ CHẠY
+========================================================= */
+.marquee { background: var(--navy); color: #fff; overflow: hidden; padding: 18px 0; transform: rotate(-1.2deg); margin: 20px -2vw; box-shadow: 0 12px 30px rgba(43,45,114,.2); }
+.marquee-track { display: flex; gap: 40px; width: max-content; animation: marquee 38s linear infinite; font-weight: 700; font-size: 18px; letter-spacing: .04em; white-space: nowrap; }
+.marquee-track span { display: inline-flex; align-items: center; gap: 40px; }
+.marquee-track i { font-style: normal; color: var(--gold); }
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+/* =========================================================
+   LÁ THƯ
+========================================================= */
+.letter-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 70px; align-items: start; }
+.letter-side { position: relative; }
+.letter-photo { margin-top: 36px; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); transform: rotate(-2deg); border: 10px solid #fff; cursor: zoom-in; max-width: 480px; }
+.letter-photo img { width: 100%; height: auto; }
+.letter { position: relative; background: #fff; border-radius: 8px; padding: 60px 56px 56px; box-shadow: var(--shadow);
+    background-image: repeating-linear-gradient(to bottom, transparent 0, transparent 39px, rgba(43,45,114,.06) 39px, rgba(43,45,114,.06) 40px); background-position: 0 70px; }
+.letter::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 6px; border-radius: 8px 0 0 8px; background: linear-gradient(var(--gold), var(--navy)); }
+.letter .stamp { position: absolute; right: 30px; top: -26px; width: 86px; height: 100px; background: #fff; border: 3px dashed var(--gold); border-radius: 6px; display: grid; place-items: center; text-align: center; transform: rotate(8deg); box-shadow: 0 8px 20px rgba(0,0,0,.08); }
+.letter .stamp b { display: block; font-family: var(--serif); font-size: 34px; color: var(--navy); line-height: 1; }
+.letter .stamp small { font-size: 9px; letter-spacing: .15em; color: var(--muted); font-weight: 700; }
+.letter .greet { font-family: var(--hand); font-size: 46px; color: var(--navy); margin-bottom: 20px; }
+.letter p { font-size: 17px; line-height: 40px; color: #34365e; margin-bottom: 0; }
+.letter p + p { margin-top: 0; text-indent: 0; }
+.letter p.sp { margin-top: 40px; }
+.letter .sign { margin-top: 36px; text-align: right; }
+.letter .sign span { display: block; font-size: 14px; color: var(--muted); }
+.letter .sign strong { font-family: var(--hand); font-size: 38px; color: var(--gold); font-weight: 700; }
+.letter .sign .members { display: block; margin-top: 10px; font-size: 13px; line-height: 1.7; color: var(--muted); }
+
+/* =========================================================
+   VIDEO
+========================================================= */
+.video-wrap { margin-top: 56px; position: relative; border-radius: 26px; overflow: hidden; background: var(--navy); box-shadow: 0 30px 70px rgba(43,45,114,.25); border: 10px solid #fff; }
+.video-wrap video { width: 100%; display: block; aspect-ratio: 16/9; background: #000; }
+.video-play { position: absolute; inset: 0; display: grid; place-items: center; background: linear-gradient(to top, rgba(43,45,114,.55), rgba(43,45,114,.05)); border: 0; transition: opacity .4s; }
+.video-play span { width: 96px; height: 96px; border-radius: 50%; background: var(--gold); display: grid; place-items: center; box-shadow: 0 0 0 14px rgba(247,168,35,.3); animation: pulse 2.2s infinite; }
+.video-play span::after { content: ""; border-left: 28px solid var(--navy); border-top: 17px solid transparent; border-bottom: 17px solid transparent; margin-left: 8px; }
+.video-play.gone { opacity: 0; pointer-events: none; }
+@keyframes pulse { 50% { box-shadow: 0 0 0 26px rgba(247,168,35,.08); } }
+
+/* =========================================================
+   HÀNH TRÌNH
+========================================================= */
+.phase-tabs { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 44px; }
+.phase-tab { background: #fff; border: 1.5px solid var(--line); border-radius: 999px; padding: 12px 22px; color: var(--navy); font-weight: 700; font-size: 14px; transition: .3s; }
+.phase-tab small { display: block; font-weight: 500; font-size: 11px; color: var(--muted); }
+.phase-tab.active { background: var(--navy); border-color: var(--navy); color: #fff; box-shadow: 0 10px 24px rgba(43,45,114,.25); }
+.phase-tab.active small { color: var(--gold-2); }
+.phase { display: none; margin-top: 60px; }
+.phase.active { display: block; animation: fadeUp .7s ease both; }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } }
+.phase-head { display: grid; grid-template-columns: auto 1fr; gap: 36px; align-items: center; background: #fff; border-radius: 24px; padding: 34px 40px; box-shadow: var(--shadow); }
+.phase-num { font-family: var(--serif); font-size: 90px; line-height: .9; color: var(--gold); font-weight: 700; }
+.phase-head h3 { font-family: var(--serif); font-size: 36px; color: var(--navy); }
+.phase-head h3 span { font-family: var(--sans); font-size: 15px; color: var(--muted); font-weight: 600; margin-left: 10px; }
+.phase-head p { color: var(--muted); margin-top: 8px; }
+.milestones { position: relative; margin-top: 56px; padding-left: 40px; }
+.milestones::before { content: ""; position: absolute; left: 11px; top: 8px; bottom: 8px; width: 3px; border-radius: 3px; background: linear-gradient(var(--gold), var(--navy)); opacity: .5; }
+.ms { position: relative; display: grid; grid-template-columns: 1fr 1.1fr; gap: 36px; align-items: center; margin-bottom: 56px; }
+.ms::before { content: ""; position: absolute; left: -36px; top: 50%; width: 17px; height: 17px; border-radius: 50%; background: #fff; border: 4px solid var(--gold); transform: translateY(-50%); box-shadow: 0 0 0 6px rgba(247,168,35,.18); }
+.ms:nth-child(even) .ms-media { order: 2; }
+.ms-media { position: relative; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); cursor: zoom-in; border: 8px solid #fff; }
+.ms-media img { width: 100%; aspect-ratio: 4/3; object-fit: cover; transition: transform .8s ease; }
+.ms-media:hover img { transform: scale(1.06); }
+.ms-date { display: inline-block; background: var(--gold-soft); color: #b36b00; font-weight: 800; font-size: 13px; padding: 5px 12px; border-radius: 999px; letter-spacing: .05em; }
+.ms h4 { font-family: var(--serif); font-size: 28px; color: var(--navy); margin: 14px 0 10px; line-height: 1.2; }
+.ms p { color: var(--muted); font-size: 16px; }
+.ms q { display: block; margin-top: 16px; font-family: var(--hand); font-size: 30px; line-height: 1.3; color: var(--navy-2); quotes: "“" "”"; }
+
+/* =========================================================
+   ALBUM
+========================================================= */
+.filters { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-top: 36px; }
+.filter { border: 1.5px solid var(--line); background: #fff; color: var(--navy); border-radius: 999px; padding: 9px 18px; font-weight: 600; font-size: 14px; transition: .3s; }
+.filter.active, .filter:hover { background: var(--gold); border-color: var(--gold); color: var(--navy); }
+.album { columns: 4 240px; column-gap: 18px; margin-top: 44px; }
+.album figure { break-inside: avoid; margin-bottom: 18px; background: #fff; padding: 8px 8px 12px; border-radius: 14px; box-shadow: 0 10px 30px rgba(43,45,114,.09); cursor: zoom-in; transition: transform .4s ease, box-shadow .4s ease; }
+.album figure:hover { transform: translateY(-6px) rotate(-.6deg); box-shadow: 0 20px 40px rgba(43,45,114,.16); }
+.album img { width: 100%; border-radius: 9px; }
+.album figcaption { padding: 10px 6px 0; font-size: 13px; color: var(--ink); font-weight: 600; display: flex; justify-content: space-between; gap: 10px; }
+.album figcaption span { color: var(--gold); font-weight: 800; white-space: nowrap; }
+.album figure.hide { display: none; }
+
+/* =========================================================
+   BIẾT ƠN
+========================================================= */
+.thanks-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 60px; }
+.thank { background: #fff; border-radius: 22px; padding: 34px 30px; box-shadow: var(--shadow); position: relative; overflow: hidden; transition: transform .4s ease; }
+.thank:hover { transform: translateY(-8px); }
+.thank::after { content: ""; position: absolute; right: -40px; top: -40px; width: 120px; height: 120px; border-radius: 50%; background: var(--gold-soft); }
+.thank .ic { position: relative; z-index: 1; width: 56px; height: 56px; border-radius: 16px; display: grid; place-items: center; font-size: 26px; background: var(--sky); }
+.thank h3 { font-family: var(--serif); font-size: 24px; color: var(--navy); margin: 22px 0 10px; }
+.thank p { color: var(--muted); font-size: 15px; }
+.thank.feature { grid-column: span 2; background: linear-gradient(135deg, var(--navy), #3d40a0); color: #fff; }
+.thank.feature h3 { color: #fff; font-size: 30px; }
+.thank.feature p { color: #d6d9ff; font-size: 16px; max-width: 520px; }
+.thank.feature::after { background: rgba(247,168,35,.25); width: 220px; height: 220px; right: -60px; top: -60px; }
+.thank.feature .ic { background: var(--gold); }
+
+/* =========================================================
+   LỜI CHÚC
+========================================================= */
+.wishes { background: linear-gradient(180deg, transparent, var(--bg-2) 18%, var(--bg-2) 82%, transparent); }
+.wall { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 26px; margin-top: 60px; }
+.note { position: relative; padding: 30px 26px 24px; min-height: 210px; display: flex; flex-direction: column; justify-content: space-between; border-radius: 4px; box-shadow: 0 14px 30px rgba(43,45,114,.12); transition: transform .4s ease; }
+.note:hover { transform: rotate(0) translateY(-8px) !important; }
+.note::before { content: ""; position: absolute; top: -10px; left: 50%; width: 70px; height: 22px; transform: translateX(-50%) rotate(-2deg); background: rgba(255,255,255,.7); box-shadow: 0 2px 6px rgba(0,0,0,.06); }
+.note .tag { font-size: 11px; font-weight: 800; letter-spacing: .15em; color: var(--navy); opacity: .7; }
+.note p { font-family: var(--hand); font-size: 27px; line-height: 1.3; color: var(--ink); margin: 12px 0; }
+.note small { font-size: 13px; color: var(--muted); font-weight: 600; }
+.c1 { background: #fff4c7; } .c2 { background: #e2e9ff; } .c3 { background: #ffe1d6; } .c4 { background: #dff5e8; } .c5 { background: #f5e6ff; }
+.wish-form { max-width: 720px; margin: 80px auto 0; background: #fff; border-radius: 26px; padding: 44px; box-shadow: var(--shadow); }
+.wish-form h3 { font-family: var(--serif); font-size: 32px; color: var(--navy); }
+.wish-form > p { color: var(--muted); margin: 8px 0 26px; }
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+input, textarea { width: 100%; background: var(--bg); border: 1.5px solid var(--line); color: var(--ink); padding: 15px 16px; border-radius: 12px; outline: none; transition: .3s; }
+textarea { min-height: 140px; margin-top: 14px; resize: vertical; }
+input:focus, textarea:focus { border-color: var(--gold); background: #fff; box-shadow: 0 0 0 4px rgba(247,168,35,.15); }
+.colors { display: flex; gap: 10px; margin-top: 16px; align-items: center; font-size: 14px; color: var(--muted); }
+.colors label { width: 30px; height: 30px; border-radius: 50%; cursor: pointer; border: 3px solid #fff; box-shadow: 0 0 0 1.5px var(--line); }
+.colors input { display: none; }
+.colors input:checked + label { box-shadow: 0 0 0 3px var(--gold); }
+.wish-form .btn { margin-top: 22px; width: 100%; justify-content: center; }
+.form-note { margin-top: 14px; font-size: 12px; color: var(--muted); text-align: center; }
+
+/* =========================================================
+   KẾT
+========================================================= */
+.final { text-align: center; padding: 150px 0 130px; }
+.final-mascot { width: 130px; margin: 0 auto; animation: wave 3s ease-in-out infinite; filter: drop-shadow(0 14px 20px rgba(43,45,114,.2)); }
+.final h2 { font-family: var(--serif); color: var(--navy); font-size: clamp(42px, 6.5vw, 86px); line-height: 1.05; margin-top: 20px; }
+.final h2 em { color: var(--gold); font-style: italic; display: block; }
+.final p { max-width: 640px; margin: 28px auto 0; color: var(--muted); font-size: 17px; }
+.final .btn { margin-top: 40px; }
+.final .hand { font-family: var(--hand); font-size: 36px; color: var(--navy-2); margin-top: 40px; }
+
+footer { background: var(--navy); color: #cfd2ff; padding: 64px 5vw 28px; font-size: 14px; }
+.foot-top { max-width: var(--container); margin: 0 auto; display: grid; grid-template-columns: .9fr 1.1fr; gap: 50px; align-items: center; }
+.foot-brand .tap-logo { width: 240px; background: #fef7e6; border-radius: 22px; padding: 10px 14px; box-shadow: 0 16px 40px rgba(0,0,0,.25); }
+.foot-brand p { margin-top: 22px; max-width: 420px; font-size: 15px; line-height: 1.7; }
+.foot-brand strong { color: var(--gold-2); }
+.contacts { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.contacts a, .contacts .nolink { display: flex; align-items: center; gap: 14px; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.1); border-radius: 16px; padding: 14px 16px; color: #fff; font-weight: 600; font-size: 14px; line-height: 1.35; transition: background .3s, transform .3s; overflow-wrap: anywhere; }
+.contacts a:hover { background: rgba(247,168,35,.18); transform: translateY(-3px); }
+.contacts li.wide { grid-column: 1 / -1; }
+.contacts small { display: block; color: #aeb2e8; font-weight: 500; font-size: 12px; margin-bottom: 2px; }
+.contacts .ci { flex-shrink: 0; width: 40px; height: 40px; border-radius: 12px; background: var(--gold); color: var(--navy); display: grid; place-items: center; }
+.contacts .ci svg { width: 20px; height: 20px; }
+.foot-bottom { max-width: var(--container); margin: 50px auto 0; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.12); display: flex; align-items: center; gap: 18px; flex-wrap: wrap; font-size: 13px; }
+.foot-bottom img { height: 40px; background: #fff; padding: 5px 10px; border-radius: 10px; }
+.foot-bottom .right { margin-left: auto; color: var(--gold-2); font-weight: 700; }
+
+/* Nút nhạc nền */
+.music-btn { position: fixed; right: 20px; bottom: 20px; z-index: 200; display: flex; align-items: center; gap: 10px; border: 0; border-radius: 999px; padding: 12px 18px 12px 14px; background: var(--navy); color: #fff; font-weight: 700; font-size: 13px; box-shadow: 0 12px 30px rgba(43,45,114,.35); transition: transform .3s, background .3s; }
+.music-btn:hover { transform: translateY(-3px); }
+.music-btn .eq { display: flex; align-items: flex-end; gap: 3px; height: 16px; }
+.music-btn .eq i { width: 3px; height: 4px; border-radius: 2px; background: var(--gold-2); }
+.music-btn.playing .eq i { animation: eq .9s ease-in-out infinite; }
+.music-btn.playing .eq i:nth-child(2) { animation-delay: -.3s; }
+.music-btn.playing .eq i:nth-child(3) { animation-delay: -.6s; }
+.music-btn.playing .eq i:nth-child(4) { animation-delay: -.15s; }
+.music-btn:not(.playing) { background: #fff; color: var(--navy); }
+.music-btn:not(.playing) .eq i { background: var(--muted); }
+@keyframes eq { 0%, 100% { height: 4px; } 50% { height: 16px; } }
+
+/* =========================================================
+   LIGHTBOX
+========================================================= */
+.lightbox { position: fixed; inset: 0; z-index: 10000; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; padding: 30px; background: rgba(255,250,240,.96); backdrop-filter: blur(10px); opacity: 0; visibility: hidden; transition: .35s; }
+.lightbox.active { opacity: 1; visibility: visible; }
+.lightbox img { max-width: 88vw; max-height: 78vh; object-fit: contain; border-radius: 12px; border: 8px solid #fff; box-shadow: var(--shadow); }
+.lightbox p { color: var(--navy); font-weight: 700; text-align: center; }
+.lb-btn { position: absolute; border: 0; background: #fff; color: var(--navy); width: 52px; height: 52px; border-radius: 50%; font-size: 24px; box-shadow: var(--shadow); transition: .3s; }
+.lb-btn:hover { background: var(--gold); }
+#lbClose { top: 22px; right: 22px; }
+#lbPrev { left: 22px; top: 50%; transform: translateY(-50%); }
+#lbNext { right: 22px; top: 50%; transform: translateY(-50%); }
+
+/* =========================================================
+   HIỆN DẦN
+========================================================= */
+.reveal { opacity: 0; transform: translateY(34px); transition: opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1); }
+.reveal.visible { opacity: 1; transform: none; }
+
+/* =========================================================
+   MOBILE
+========================================================= */
+@media (max-width: 1100px) {
+    .navbar nav { gap: 18px; }
+    .navbar nav a { font-size: 13px; }
+}
+@media (max-width: 960px) {
+    /* Menu dạng ngăn kéo cho máy tính bảng & điện thoại */
+    .menu-btn { display: block; }
+    .navbar { background: rgba(255,250,240,.92); backdrop-filter: blur(14px); box-shadow: 0 6px 24px rgba(43,45,114,.08); }
+    .navbar nav { position: fixed; top: 78px; left: 12px; right: 12px; flex-direction: column; gap: 0; background: #fff; border-radius: 20px; padding: 10px; box-shadow: 0 24px 60px rgba(43,45,114,.2); opacity: 0; visibility: hidden; transform: translateY(-10px); transition: .3s; }
+    .menu-open .navbar nav { opacity: 1; visibility: visible; transform: none; }
+    .navbar nav a { font-size: 16px; padding: 15px 16px; border-radius: 12px; color: var(--navy); }
+    .navbar nav a:active, .navbar nav a:hover { background: var(--gold-soft); }
+    .navbar nav a::after { display: none; }
+    .nav-cta { margin-left: auto; }
+    .hero { grid-template-columns: 1fr; min-height: auto; padding-top: 110px; gap: 30px; }
+    .hero-visual { height: 440px; max-width: 620px; width: 100%; margin: 0 auto; }
+    .big20 { font-size: 140px; }
+    .letter-grid { grid-template-columns: 1fr; gap: 40px; }
+    .letter-side { position: static; }
+    .ms { grid-template-columns: 1fr; gap: 20px; }
+    .ms:nth-child(even) .ms-media { order: 0; }
+    .ms::before { top: 30px; transform: none; }
+    .thanks-grid { grid-template-columns: 1fr 1fr; }
+    .letter-photo { margin-left: auto; margin-right: auto; }
+}
+@media (max-width: 640px) {
+    .navbar { height: 66px; padding: 0 16px; }
+    .navbar nav { top: 72px; }
+    .brand img { height: 34px; }
+    .nav-cta { display: none; }
+    .section { width: calc(100% - 32px); }
+    .pad { padding: 80px 0; }
+    .eyebrow { font-size: 11px; letter-spacing: .18em; }
+    h2.title { font-size: clamp(32px, 9vw, 42px); }
+    .sub { font-size: 15px; }
+    .intro h1 { font-size: clamp(38px, 11vw, 52px); }
+    .intro p.lead { font-size: 15px; }
+    .hero { padding-top: 96px; }
+    .hero h1 { font-size: clamp(38px, 11vw, 50px); margin-top: 20px; }
+    .hero-badge { font-size: 12px; }
+    .hero-actions { gap: 10px; }
+    .hero-actions .btn { flex: 1 1 auto; justify-content: center; }
+    .hero-visual { height: 340px; }
+    .polaroid { padding: 7px 7px 32px; }
+    .polaroid figcaption { font-size: 19px; bottom: 7px; }
+    .marquee-track { font-size: 14px; }
+    .letter .greet { font-size: 38px; }
+    .letter .sign strong { font-size: 30px; }
+    .letter .stamp { width: 70px; height: 82px; right: 16px; }
+    .letter .stamp b { font-size: 26px; }
+    .ms q { font-size: 26px; }
+    .note p { font-size: 26px; }
+    .final { padding: 100px 0 90px; }
+    .final h2 { font-size: clamp(34px, 10vw, 46px); }
+    .final p { font-size: 15px; }
+    .final .hand { font-size: 28px; }
+    /* Tab chặng: trượt ngang */
+    .phase-tabs { flex-wrap: nowrap; justify-content: flex-start; overflow-x: auto; margin: 32px -16px 0; padding: 4px 16px 14px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+    .phase-tabs::-webkit-scrollbar { display: none; }
+    .phase-tab { flex: 0 0 auto; scroll-snap-align: start; padding: 10px 18px; font-size: 13px; }
+    .phase { margin-top: 30px; }
+    .milestones { margin-top: 36px; }
+    .ms { margin-bottom: 44px; }
+    .ms p { font-size: 15px; }
+    /* Bộ lọc album: trượt ngang, album 2 cột */
+    .filters { flex-wrap: nowrap; justify-content: flex-start; overflow-x: auto; margin: 28px -16px 0; padding: 4px 16px 10px; scrollbar-width: none; }
+    .filters::-webkit-scrollbar { display: none; }
+    .filter { flex: 0 0 auto; font-size: 13px; padding: 8px 14px; }
+    .album { columns: 2; column-gap: 10px; margin-top: 24px; }
+    .album figure { margin-bottom: 10px; padding: 5px 5px 8px; border-radius: 10px; }
+    .album img { border-radius: 6px; }
+    .album figcaption { flex-direction: column; gap: 2px; font-size: 11.5px; padding: 6px 3px 0; line-height: 1.35; }
+    .thanks-grid { gap: 16px; margin-top: 40px; }
+    .thank { padding: 26px 22px; }
+    .wall { gap: 22px; margin-top: 40px; }
+    .wish-form { margin-top: 50px; }
+    .wish-form h3 { font-size: 26px; }
+    input, textarea { font-size: 16px; } /* tránh iPhone tự phóng to khi nhập */
+    .mascot { width: 96px; right: -4px; bottom: -6px; }
+    .bubble { right: 86px; bottom: 100px; font-size: 12px; }
+    .big20 { font-size: 90px; }
+    .hero-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 36px; }
+    .hero-stats div { padding-left: 10px; }
+    .hero-stats strong { font-size: 26px; }
+    .hero-stats span { font-size: 12px; }
+    .hero p.desc { font-size: 16px; }
+    .hero-actions .btn { padding: 13px 22px; }
+    .letter { padding: 50px 24px 36px; }
+    .letter p { font-size: 16px; line-height: 34px; }
+    .letter { background-size: auto; background-image: none; }
+    .phase-head { grid-template-columns: 1fr; padding: 26px; gap: 10px; }
+    .phase-num { font-size: 60px; }
+    .phase-head h3 { font-size: 28px; }
+    .milestones { padding-left: 30px; }
+    .milestones::before { left: 6px; }
+    .ms::before { left: -31px; }
+    .ms h4 { font-size: 23px; }
+    .thanks-grid { grid-template-columns: 1fr; }
+    .thank.feature { grid-column: auto; }
+    .row { grid-template-columns: 1fr; }
+    .wish-form { padding: 28px 20px; }
+    .video-wrap { border-width: 5px; border-radius: 16px; }
+    .video-play span { width: 70px; height: 70px; }
+    footer { padding: 50px 16px 90px; }
+    .foot-top { grid-template-columns: 1fr; gap: 30px; }
+    .foot-brand { text-align: center; }
+    .foot-brand .tap-logo { width: 200px; margin: 0 auto; }
+    .foot-brand p { margin-left: auto; margin-right: auto; }
+    .contacts { grid-template-columns: 1fr; }
+    .foot-bottom { flex-direction: column; text-align: center; gap: 10px; margin-top: 34px; }
+    .foot-bottom .right { margin-left: 0; }
+    .music-btn { right: 12px; bottom: 12px; padding: 11px 14px; }
+    .music-label { display: none; }
+    .final-mascot { width: 100px; }
+    .lb-btn { width: 44px; height: 44px; }
+    #lbPrev, #lbNext { top: auto; bottom: 20px; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+}
+</style>
+</head>
+
+<body class="locked">
+
+<div id="background">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <canvas id="sparkles"></canvas>
+</div>
+<canvas id="confetti"></canvas>
+
+<!-- =========================================================
+     MÀN MỞ ĐẦU
+========================================================= -->
+<section id="intro" class="intro">
+    <div class="intro-content">
+        <div class="envelope"><div class="seal">✦</div></div>
+        <div class="intro-small">Tâm thư của sinh viên năm cuối</div>
+        <h1>Gửi Khoa <em>thân yêu của chúng em</em></h1>
+        <p class="lead">Có một lá thư nhóm sinh viên năm cuối muốn gửi tới thầy cô Khoa Quản trị Kinh doanh.<br>Bật loa lên và mở ra nhé!</p>
+        <button id="enterButton" class="btn btn-gold">✉ Mở lá thư</button>
+    </div>
+    <div class="intro-bottom">KHOA QUẢN TRỊ KINH DOANH · HỌC VIỆN NGÂN HÀNG</div>
+</section>
+
+<main id="main-content" class="hidden">
+
+<header class="navbar">
+    <a href="#home" class="brand"><img src="assets/logo-khoa-qtkd.png" alt="Khoa Quản trị kinh doanh – Học viện Ngân hàng"></a>
+    <nav id="siteNav">
+        <a href="#letter">Lá thư</a>
+        <a href="#film">Thước phim</a>
+        <a href="#journey">Hành trình</a>
+        <a href="#album">Album</a>
+        <a href="#thanks">Biết ơn</a>
+        <a href="#wishes">Lời nhắn</a>
+        <a href="#tap2me">Tap2Me</a>
+    </nav>
+    <a href="#wishes" class="btn btn-navy nav-cta">Gửi lời nhắn ✦</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Mở menu" aria-expanded="false" aria-controls="siteNav"><span></span></button>
+</header>
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+<section id="home" class="section hero">
+    <div>
+        <div class="hero-badge reveal"><b>Tâm thư</b> Từ nhóm sinh viên năm cuối</div>
+        <h1 class="reveal">Có một nơi<br>chúng em <em>gọi là nhà.</em></h1>
+        <p class="desc reveal">Bốn năm ở Khoa Quản trị Kinh doanh trôi qua nhanh hơn chúng em tưởng. Trước khi khoác áo cử nhân, nhóm chúng em muốn gửi lại đây vài lời tâm tình, những ký ức và thật nhiều lời cảm ơn tới thầy cô.</p>
+        <div class="hero-actions reveal">
+            <a href="#letter" class="btn btn-gold">Đọc lá thư ↓</a>
+            <a href="#film" class="btn btn-ghost">▶ Xem thước phim</a>
+        </div>
+        <div class="hero-stats reveal">
+            <div><strong data-count="4">0</strong><span>năm thanh xuân ở Khoa</span></div>
+            <div><strong>3</strong><span>chặng đường của Khoa</span></div>
+            <div><strong>2005</strong><span>năm Khoa ra đời</span></div>
+        </div>
+    </div>
+    <div class="hero-visual reveal">
+        <div class="big20">QTKD</div>
+        <figure class="polaroid pol-1"><div class="tape"></div><img src="assets/photos/p02_2.jpg" alt="Lễ công bố quyết định thành lập Khoa năm 2005"><figcaption>Ngày đầu 2005</figcaption></figure>
+        <figure class="polaroid pol-2"><div class="tape"></div><img src="assets/photos/cktc_2025.jpg" alt="Vòng chung kết Chìa Khóa Thành Công"><figcaption>Chìa Khóa Thành Công</figcaption></figure>
+        <figure class="polaroid pol-3"><div class="tape"></div><img src="assets/photos/p94_6.jpg" alt="Welcome Day 2025"><figcaption>Welcome Day 2025</figcaption></figure>
+        <div class="bubble">Cảm ơn thầy cô nhé! 💛</div>
+        <img class="mascot" src="assets/mascot.png" alt="Linh vật Học viện Ngân hàng">
+    </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+        <span>CẢM ƠN KHOA <i>✦</i> CẢM ƠN THẦY CÔ <i>✦</i> BỐN NĂM THANH XUÂN <i>✦</i> CHÌA KHÓA THÀNH CÔNG <i>✦</i> MÃI LÀ SINH VIÊN QTKD <i>✦</i></span>
+        <span>CẢM ƠN KHOA <i>✦</i> CẢM ƠN THẦY CÔ <i>✦</i> BỐN NĂM THANH XUÂN <i>✦</i> CHÌA KHÓA THÀNH CÔNG <i>✦</i> MÃI LÀ SINH VIÊN QTKD <i>✦</i></span>
+    </div>
+</div>
+
+<!-- =========================================================
+     LÁ THƯ
+========================================================= -->
+<section id="letter" class="section pad">
+    <div class="letter-grid">
+        <div class="letter-side">
+            <p class="eyebrow reveal">Tâm thư sinh viên năm cuối</p>
+            <h2 class="title reveal">Những điều<br>chúng em <em>chưa kịp nói.</em></h2>
+            <p class="sub reveal">Từ Nhóm 4 lớp Khởi sự kinh doanh, những sinh viên năm cuối của Khoa Quản trị Kinh doanh – Học viện Ngân hàng.</p>
+            <div class="letter-photo reveal" data-id="nhom_tap2me" data-cap="Nhóm 4 · Khởi sự kinh doanh"><img src="assets/photos/nhom_tap2me.jpg" alt="Nhóm 4 lớp Khởi sự kinh doanh: Nguyễn Thị Quỳnh Anh, Nguyễn Ngọc Huyền, Lưu Hồng Phượng, Phạm Thị Him, Giang Ngọc Diệp, Nguyễn Thị Lan, Đỗ Thị Mai Lan"></div>
+        </div>
+        <article class="letter reveal">
+            <div class="stamp"><div><b>✦</b><small>QTKD</small></div></div>
+            <div class="greet">Kính gửi thầy cô,</div>
+            <p>Chúng em là một nhóm sinh viên năm cuối. Chỉ ít lâu nữa thôi, chúng em sẽ rời giảng đường Học viện Ngân hàng để bắt đầu một chặng đường mới. Và trước khi đi, có vài điều chúng em rất muốn được nói.</p>
+            <p class="sp">Chúng em vẫn nhớ những ngày đầu nhập học: bỡ ngỡ, chưa quen ai, chưa biết Quản trị Kinh doanh rồi sẽ đưa mình tới đâu. Thầy cô là những người đầu tiên đón chúng em, giải đáp từng thắc mắc nhỏ, kiên nhẫn chỉ bảo từ cách làm một bài thuyết trình đến cách nhìn một bài toán kinh doanh.</p>
+            <p class="sp">Cảm ơn thầy cô vì đã luôn nhiệt tình giúp đỡ chúng em: những buổi góp ý bài tập nhóm sau giờ học, những câu trả lời cho tin nhắn gửi lúc muộn, những lời động viên đến đúng lúc chúng em muốn bỏ cuộc. Phía sau mỗi bài giảng là rất nhiều tâm huyết mà không phải lúc nào chúng em cũng kịp nhận ra.</p>
+            <p class="sp">Cảm ơn Khoa vì đã cho chúng em thật nhiều cơ hội được trải nghiệm: sân khấu <b>Chìa Khóa Thành Công</b>, những buổi Chào tân và Welcome Day rộn ràng, những chuyến đi thực tế doanh nghiệp, những buổi tọa đàm cùng diễn giả. Nhờ vậy, kiến thức trên lớp mới thật sự “sống” trong chúng em.</p>
+            <p class="sp">Và cảm ơn thầy cô đã đồng hành cùng nhóm trong môn <b>Khởi sự kinh doanh</b>, nơi chúng em lần đầu dám biến một ý tưởng nhỏ thành <b>Tap2Me</b>, sản phẩm của riêng mình.</p>
+            <p class="sp">Dù sau này mỗi người một ngả, chúng em sẽ luôn mang theo những gì đã học được ở đây. Kính chúc thầy cô luôn mạnh khỏe, hạnh phúc và mãi giữ ngọn lửa nhiệt huyết với nghề. Cảm ơn Khoa, vì tất cả.</p>
+            <div class="sign">
+                <span>Thương gửi, từ</span>
+                <strong>Nhóm Tap2Me</strong>
+                <small class="members">Nguyễn Thị Quỳnh Anh · Nguyễn Ngọc Huyền · Lưu Hồng Phượng · Phạm Thị Him · Giang Ngọc Diệp · Nguyễn Thị Lan · Đỗ Thị Mai Lan</small>
+            </div>
+        </article>
+    </div>
+</section>
+
+<!-- =========================================================
+     THƯỚC PHIM
+========================================================= -->
+<section id="film" class="section pad centered" style="padding-top: 40px;">
+    <p class="eyebrow reveal">Thước phim kỷ niệm</p>
+    <h2 class="title reveal">Hai phút, <em>hai mươi năm.</em></h2>
+    <p class="sub reveal">Bật tiếng lên và cùng chúng em xem lại những khoảnh khắc đã làm nên Khoa Quản trị Kinh doanh.</p>
+    <div class="video-wrap reveal">
+        <video id="film-video" src="assets/video-ky-niem.mp4" poster="assets/video-poster.jpg" preload="metadata" playsinline controls></video>
+        <button class="video-play" id="videoPlay" aria-label="Phát video"><span></span></button>
+    </div>
+</section>
+
+<!-- =========================================================
+     HÀNH TRÌNH
+========================================================= -->
+<section id="journey" class="section pad">
+    <div class="centered">
+        <p class="eyebrow reveal">Hành trình 2005 – 2025</p>
+        <h2 class="title reveal">Ba chặng đường,<br><em>một mái nhà.</em></h2>
+        <p class="sub reveal">Mỗi chặng đường là một thế hệ sinh viên, một kho ký ức. Chọn một chặng để cùng chúng em đi lại con đường ấy.</p>
+    </div>
+    <div class="phase-tabs reveal" id="phaseTabs"></div>
+    <div id="phases"></div>
+</section>
+
+<!-- =========================================================
+     ALBUM
+========================================================= -->
+<section id="album" class="section pad" style="padding-top: 40px;">
+    <div class="centered">
+        <p class="eyebrow reveal">Album ký ức</p>
+        <h2 class="title reveal">Những khoảnh khắc <em>chúng mình từng có.</em></h2>
+        <p class="sub reveal">Ảnh được chọn từ cuốn kỷ yếu “Khoa QTKD 2005 – 2025”. Chạm vào ảnh để xem lớn hơn.</p>
+    </div>
+    <div class="filters reveal" id="filters">
+        <button class="filter active" data-f="all">Tất cả</button>
+        <button class="filter" data-f="1">Phát triển · 2005–2011</button>
+        <button class="filter" data-f="2">Vươn mình · 2011–2019</button>
+        <button class="filter" data-f="3">Lớn mạnh · 2019–2025</button>
+    </div>
+    <div class="album" id="albumGrid"></div>
+</section>
+
+<!-- =========================================================
+     BIẾT ƠN
+========================================================= -->
+<section id="thanks" class="section pad">
+    <div class="centered">
+        <p class="eyebrow reveal">Điều chúng em biết ơn</p>
+        <h2 class="title reveal">Khoa không chỉ là<br><em>những giảng đường.</em></h2>
+    </div>
+    <div class="thanks-grid">
+        <div class="thank feature reveal">
+            <div class="ic">👩‍🏫</div>
+            <h3>Cảm ơn thầy cô</h3>
+            <p>Những người đứng lớp, người hướng dẫn nghiên cứu khoa học, người ngồi hội đồng bảo vệ khóa luận — và cả những thầy cô đã nghỉ hưu nhưng vẫn luôn là một phần của Khoa. Chúng em trưởng thành vì có thầy cô ở đó.</p>
+        </div>
+        <div class="thank reveal">
+            <div class="ic">🔑</div>
+            <h3>Chìa Khóa Thành Công</h3>
+            <p>Sân chơi đã theo chúng em qua bao mùa, từ 2008 đến đêm chung kết 2025 — nơi dạy chúng em dám đứng trên sân khấu.</p>
+        </div>
+        <div class="thank reveal">
+            <div class="ic">🏢</div>
+            <h3>Những chuyến đi thực tế</h3>
+            <p>Hà Nam, Viettel, Base, những buổi thăm và làm việc với doanh nghiệp — nơi bài giảng bước ra đời thực.</p>
+        </div>
+        <div class="thank reveal">
+            <div class="ic">🎓</div>
+            <h3>Chương trình đào tạo</h3>
+            <p>Những chương trình được kiểm định chất lượng, lớp cao học, và chương trình Kinh doanh số mở năm 2025 — Khoa luôn đi trước để chúng em vững vàng.</p>
+        </div>
+        <div class="thank reveal">
+            <div class="ic">🎉</div>
+            <h3>Những ngày hội</h3>
+            <p>Chào tân sinh viên, 20/11, 8/3, du xuân, hội trại, văn nghệ… những ngày tưởng bình thường mà nhớ mãi.</p>
+        </div>
+    </div>
+</section>
+
+<!-- =========================================================
+     LỜI CHÚC
+========================================================= -->
+<section id="wishes" class="wishes pad">
+    <div class="section">
+        <div class="centered">
+            <p class="eyebrow reveal">Bức tường lời nhắn</p>
+            <h2 class="title reveal">Một lời gửi <em>tới thầy cô.</em></h2>
+            <p class="sub reveal">Nếu được gửi một câu tới thầy cô trong Khoa, bạn sẽ nói gì?</p>
+        </div>
+        <div class="wall" id="wall">
+            <div class="note c1" style="transform: rotate(-3deg)"><span class="tag">SINH VIÊN NĂM CUỐI</span><p>“Cảm ơn thầy cô vì đã cho em những người bạn và những bài học tuyệt vời nhất.”</p><small>— Một bạn sinh viên</small></div>
+            <div class="note c2" style="transform: rotate(2deg)"><span class="tag">SẮP RA TRƯỜNG</span><p>“Chưa rời đi mà đã thấy nhớ những ngày ở Khoa rồi.”</p><small>— Một bạn năm cuối</small></div>
+            <div class="note c3" style="transform: rotate(-1deg)"><span class="tag">KHỞI SỰ KINH DOANH</span><p>“Cảm ơn thầy cô đã tin vào ý tưởng nhỏ của nhóm chúng em.”</p><small>— Nhóm Tap2Me</small></div>
+            <div class="note c4" style="transform: rotate(3deg)"><span class="tag">CHÌA KHÓA THÀNH CÔNG</span><p>“Đêm chung kết năm ấy, cả Khoa hò reo cho chúng em. Không bao giờ quên!”</p><small>— Một cựu thí sinh</small></div>
+        </div>
+
+        <form class="wish-form reveal" id="wishForm">
+            <h3>Gửi lời nhắn của bạn ✦</h3>
+            <p>Lời nhắn sẽ được dán lên bức tường phía trên.</p>
+            <div class="row">
+                <input type="text" id="wName" placeholder="Tên của bạn" maxlength="40" required>
+                <input type="text" id="wClass" placeholder="Khóa / Lớp (VD: K25 QTKD)" maxlength="30">
+            </div>
+            <textarea id="wMsg" placeholder="Điều bạn muốn gửi tới Khoa…" maxlength="220" required></textarea>
+            <div class="colors">Màu giấy:
+                <input type="radio" name="wColor" id="col1" value="c1" checked><label for="col1" style="background:#fff4c7"></label>
+                <input type="radio" name="wColor" id="col2" value="c2"><label for="col2" style="background:#e2e9ff"></label>
+                <input type="radio" name="wColor" id="col3" value="c3"><label for="col3" style="background:#ffe1d6"></label>
+                <input type="radio" name="wColor" id="col4" value="c4"><label for="col4" style="background:#dff5e8"></label>
+                <input type="radio" name="wColor" id="col5" value="c5"><label for="col5" style="background:#f5e6ff"></label>
+            </div>
+            <button type="submit" class="btn btn-gold">Dán lời nhắn lên tường ↗</button>
+            <p class="form-note">* Lời nhắn được lưu trên trình duyệt của bạn.</p>
+        </form>
+    </div>
+</section>
+
+<!-- =========================================================
+     KẾT
+========================================================= -->
+<section class="section final">
+    <img class="final-mascot reveal" src="assets/mascot.png" alt="" aria-hidden="true">
+    <p class="eyebrow reveal" style="margin-top: 20px;">Thank you, teachers</p>
+    <h2 class="reveal">Cảm ơn thầy cô,<em>cảm ơn Khoa của chúng em!</em></h2>
+    <p class="reveal">Dù sau này mỗi người một ngả, chúng em vẫn sẽ luôn tự hào nói rằng: “Mình là sinh viên Khoa Quản trị Kinh doanh – Học viện Ngân hàng.”</p>
+    <button class="btn btn-gold reveal" id="celebrate">💛 Gửi yêu thương tới Khoa</button>
+    <p class="hand reveal">Dù đi đâu, chúng em vẫn sẽ nhớ đường về Khoa.</p>
+</section>
+
+<!-- =========================================================
+     TAP2ME
+========================================================= -->
+<footer id="tap2me">
+    <div class="foot-top">
+        <div class="foot-brand">
+            <img class="tap-logo" src="assets/tap2me-logo.png" alt="Tap2Me – Chạm để kết nối">
+            <p>Trang web được thực hiện bởi <strong>Tap2Me</strong>, nhóm sinh viên năm cuối Khoa Quản trị Kinh doanh. Cảm ơn bạn đã đọc tới đây!</p>
+        </div>
+        <ul class="contacts">
+            <li><a href="https://www.facebook.com/search/top?q=Tap2Me%20-%20Ch%E1%BA%A1m%20%C4%91%E1%BB%83%20k%E1%BA%BFt%20n%E1%BB%91i" target="_blank" rel="noopener">
+                <span class="ci"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3c-2.8 0-4.5 1.8-4.5 4.6V11H7v4h2.5v7h4v-7H17l.5-4h-4V8.8c0-.5.3-.8.5-.8z" fill="currentColor"/></svg></span>
+                <span><small>Facebook</small>Tap2Me – Chạm để kết nối</span></a></li>
+            <li><a href="tel:0326865880">
+                <span class="ci"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z" fill="currentColor"/></svg></span>
+                <span><small>Điện thoại / Zalo</small>0326 865 880</span></a></li>
+            <li class="wide"><a href="mailto:tap2me.nfckeychain@gmail.com">
+                <span class="ci"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18c.6 0 1 .4 1 1v12c0 .6-.4 1-1 1H3c-.6 0-1-.4-1-1V6c0-.6.4-1 1-1zm9 7.2L4 7.3V17h16V7.3z" fill="currentColor"/></svg></span>
+                <span><small>Gmail</small>tap2me.nfckeychain@gmail.com</span></a></li>
+            <li><div class="nolink">
+                <span class="ci"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 1 7 7c0 5.2-7 13-7 13S5 14.2 5 9a7 7 0 0 1 7-7zm0 4.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5z" fill="currentColor"/></svg></span>
+                <span><small>Địa chỉ</small>12 Chùa Bộc, phường Kim Liên, Hà Nội</span></div></li>
+        </ul>
+    </div>
+    <div class="foot-bottom">
+        <img src="assets/logo-khoa-qtkd.png" alt="Logo Khoa Quản trị Kinh doanh">
+        <span>Tâm thư gửi Khoa Quản trị Kinh doanh · Học viện Ngân hàng</span>
+        <span class="right">© 2026 Tap2Me · Chạm để kết nối</span>
+    </div>
+</footer>
+
+<button class="music-btn" id="musicBtn" aria-label="Bật / tắt nhạc nền" aria-pressed="false">
+    <span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+    <span class="music-label">Nhạc nền</span>
+</button>
+<audio id="bgMusic" src="assets/music.mp3" loop preload="auto"></audio>
+
+</main>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+    <button class="lb-btn" id="lbClose" aria-label="Đóng">×</button>
+    <button class="lb-btn" id="lbPrev" aria-label="Ảnh trước">‹</button>
+    <img id="lbImg" src="" alt="">
+    <p id="lbCap"></p>
+    <button class="lb-btn" id="lbNext" aria-label="Ảnh sau">›</button>
+</div>
+
+<script>
+/* =========================================================
+   DỮ LIỆU — lấy từ cuốn “Khoa QTKD 2005 – 2025”
+========================================================= */
+const PHASES = [
+    { n: "01", name: "Phát triển", years: "2005 – 2011",
+      intro: "Những viên gạch đầu tiên: quyết định thành lập, những ngày lễ đầu tiên, và những lớp sinh viên đầu tiên mang tên QTKD.",
+      milestones: [
+        { img: "p02_2", date: "T9 · 2005", title: "Khoa Quản trị Kinh doanh ra đời", text: "Lễ công bố quyết định thành lập Khoa Quản trị Kinh doanh và triển khai nhiệm vụ năm học 2005 – 2006.", q: "Ngày Khoa có tên, cũng là ngày câu chuyện của chúng em bắt đầu." },
+        { img: "p03_2", date: "20 · 11 · 2005", title: "Ngày Nhà giáo đầu tiên", text: "Lễ kỷ niệm Ngày Nhà giáo Việt Nam đầu tiên của Khoa — hoa, áo dài và những lời tri ân đầu tiên.", q: "Lời cảm ơn đầu tiên, và chưa bao giờ là cuối cùng." },
+        { img: "cktc_2025", date: "2008", title: "Chìa Khóa Thành Công", text: "Cuộc thi Chìa Khóa Thành Công 2008 — sân chơi sau này trở thành “đặc sản” của sinh viên QTKD.", q: "Lần đầu đứng dưới ánh đèn sân khấu, run lắm mà vui lắm." },
+        { img: "p17_5", date: "20 · 11 · 2011", title: "Khép lại chặng đầu tiên", text: "Hội diễn văn nghệ, du xuân và những ngày 20/11 — Khoa đã thành một gia đình.", q: "" }
+      ] },
+    { n: "02", name: "Vươn mình", years: "2011 – 2019",
+      intro: "Sinh viên bước ra ngoài giảng đường: đi thực tế, làm tình nguyện, nghiên cứu khoa học và gặp gỡ doanh nghiệp.",
+      milestones: [
+        { img: "p19_4", date: "2011 – 2013", title: "Đi thực tế tại Hà Nam", text: "Những chuyến đi thực tế và du lịch hè Tràng An — học kinh doanh từ chính cuộc sống.", q: "Bài học nhớ nhất không nằm trong giáo trình." },
+        { img: "cktc_2025", date: "2014", title: "Chìa Khóa Thành Công 2014", text: "Cùng năm ấy: Đại hội Liên chi Đoàn, văn nghệ và Chào tân 2014 rộn ràng sắc đỏ.", q: "" },
+        { img: "p37_4", date: "2015 – 2016", title: "Tình nguyện tại Phú Yên", text: "Chuyến đi tình nguyện tại Phú Yên và những mùa Chào tân sinh viên ngày càng đông vui.", q: "Đi xa để thấy mình lớn thêm một chút." },
+        { img: "p41_3", date: "2016 – 2017", title: "Nghiên cứu khoa học", text: "Lễ trao giải và phát động cuộc thi Nghiên cứu khoa học — sinh viên QTKD bắt đầu viết những trang nghiên cứu của riêng mình.", q: "" },
+        { img: "p44_4", date: "2019", title: "Gần hơn với doanh nghiệp", text: "Hội thảo 2019, trải nghiệm thực tế và những buổi đi thăm, làm việc với doanh nghiệp.", q: "Từ giảng đường tới doanh nghiệp, chỉ cách một chuyến xe." }
+      ] },
+    { n: "03", name: "Lớn mạnh", years: "2019 – 2025",
+      intro: "Khoa trưởng thành: kiểm định chất lượng, hợp tác doanh nghiệp, mở chương trình mới — và vẫn luôn rộn ràng tiếng cười sinh viên.",
+      milestones: [
+        { img: "cktc_2025", date: "2019", title: "Đêm chung kết Chìa Khóa Thành Công", text: "Chìa Khóa Thành Công 2019 cùng Tọa đàm Marketing quốc tế — sân khấu lớn hơn, ước mơ cũng lớn hơn.", q: "" },
+        { img: "p55_4", date: "2021 – 2022", title: "Kiểm định chất lượng", text: "Lễ trao giấy chứng nhận kiểm định chất lượng các chương trình đào tạo; những lớp học blend vượt qua mùa Covid.", q: "Học online cũng được, miễn là vẫn có nhau." },
+        { img: "p70_5", date: "2022", title: "Thực tế Viettel & ký kết MOU", text: "Sinh viên đi thực tế tại Viettel; Khoa ký kết hợp tác (MOU) với doanh nghiệp như Charmy, Viettel Post.", q: "" },
+        { img: "cktc_2025", date: "2023", title: "Chìa Khóa Thành Công 2023", text: "Giải Nhất, pháo sáng và những giọt nước mắt hạnh phúc. Cùng năm, lớp cao học K24 và chuyến thực tế tại Base.", q: "Khoảnh khắc cả hội trường đứng dậy vỗ tay." },
+        { img: "p88_6", date: "2024", title: "Kiểm định chương trình thạc sĩ", text: "Một dấu mốc mới trong chất lượng đào tạo của Khoa.", q: "" },
+        { img: "p92_5", date: "2025", title: "Mở chương trình Kinh doanh số", text: "Năm 2025, Khoa mở chương trình Kinh doanh số — bước tiếp theo cho thế hệ sinh viên mới.", q: "Khoa vẫn luôn bắt đầu những điều mới." },
+        { img: "p94_6", date: "2025", title: "Welcome Day – Ngày hội kết nối", text: "Chìa Khóa Thành Công 2025 và Welcome Day chào đón những sinh viên mới — câu chuyện vẫn đang tiếp tục.", q: "Và đến lượt các em viết tiếp." }
+      ] }
+];
+
+const ALBUM = [
+    ["p02_2",1,"Lễ công bố thành lập Khoa","9/2005"], ["p03_2",1,"Lễ kỷ niệm Ngày Nhà giáo","20/11/2005"], ["p05_3",1,"Chào mừng ngày 8/3","2006"],
+    ["p07_3",1,"Hội thi nấu ăn & hát karaoke","20/10/2006"], ["p10_4",1,"Chìa Khóa Thành Công","2008"], ["p12_3",1,"Năm học 2008 – 2009","2009"],
+    ["p13_5",1,"Du xuân","2010"], ["p15_5",1,"Ngày Phụ nữ Việt Nam","20/10/2010"], ["p17_5",1,"Hội diễn văn nghệ","2011"],
+    ["p19_4",2,"Đi thực tế tại Hà Nam",""], ["p20_3",2,"Du lịch hè Tràng An",""], ["p21_3",2,"Hội trại",""],
+    ["p22_3",2,"Ngày Nhà giáo Việt Nam","20/11/2013"], ["p24_3",2,"Lớp kỹ năng giao tiếp",""], ["p26_4",2,"Nghỉ hè","2014"],
+    ["p29_4",2,"Ngày Nhà giáo","20/11/2014"], ["p31_3",2,"Chìa Khóa Thành Công","2014"], ["p32_4",2,"Chào tân sinh viên","2014"],
+    ["p37_3",2,"Chào tân sinh viên","2015"], ["p37_4",2,"Tình nguyện tại Phú Yên",""], ["p39_3",2,"Chào tân sinh viên",""],
+    ["p41_3",2,"Nghiên cứu khoa học","2017"], ["p43_3",2,"Hội thảo","2019"], ["p44_4",2,"Thăm & làm việc với doanh nghiệp",""],
+    ["p51_4",3,"Chung kết Chìa Khóa Thành Công","2019"], ["p53_5",3,"Ngày Nhà giáo","20/11/2020"], ["p55_4",3,"Kiểm định chất lượng","2021"],
+    ["p59_4",3,"Chào tân sinh viên","2022"], ["p60_5",3,"Chào tân sinh viên","2022"], ["p62_5",3,"Gặp mặt thầy cô nghỉ hưu","2022"],
+    ["p65_4",3,"Hội diễn văn nghệ","2022"], ["p70_5",3,"Thực tế tại Viettel","2022"], ["p72_5",3,"Ký kết MOU với doanh nghiệp",""],
+    ["p75_5",3,"Chào tân sinh viên",""], ["p76_5",3,"Khóa luận tốt nghiệp",""], ["p78_5",3,"Sinh viên & giảng viên",""],
+    ["p79_7",3,"Chìa Khóa Thành Công","2023"], ["p82_5",3,"Chuyến đi thực tế","2023"], ["p84_5",3,"Thẩm định chương trình Quản trị Du lịch",""],
+    ["p86_6",3,"Thực tế tại Base","2023"], ["p88_6",3,"Kiểm định chương trình thạc sĩ","2024"], ["p90_6",3,"Ngày Quốc tế Phụ nữ","8/3/2025"],
+    ["p91_8",3,"Ngày Nhà giáo","20/11/2025"], ["p92_5",3,"Mở chương trình Kinh doanh số","2025"], ["cktc_2025",3,"Chung kết Chìa Khóa Thành Công","2025"],
+    ["p94_6",3,"Welcome Day – Ngày hội kết nối","2025"]
+];
+const src = id => `assets/photos/${id}.jpg`;
+
+/* =========================================================
+   DỰNG HÀNH TRÌNH
+========================================================= */
+const tabs = document.getElementById("phaseTabs");
+const phasesEl = document.getElementById("phases");
+PHASES.forEach((p, i) => {
+    const t = document.createElement("button");
+    t.className = "phase-tab" + (i === 0 ? " active" : "");
+    t.innerHTML = `Chặng ${p.n} · ${p.name}<small>${p.years}</small>`;
+    t.onclick = () => {
+        document.querySelectorAll(".phase-tab").forEach(x => x.classList.remove("active"));
+        document.querySelectorAll(".phase").forEach(x => x.classList.remove("active"));
+        t.classList.add("active");
+        document.getElementById("phase-" + i).classList.add("active");
+    };
+    tabs.appendChild(t);
+
+    const wrap = document.createElement("div");
+    wrap.className = "phase" + (i === 0 ? " active" : "");
+    wrap.id = "phase-" + i;
+    wrap.innerHTML = `
+        <div class="phase-head"><div class="phase-num">${p.n}</div><div><h3>${p.name}<span>${p.years}</span></h3><p>${p.intro}</p></div></div>
+        <div class="milestones">${p.milestones.map(m => `
+            <article class="ms">
+                <div class="ms-media" data-id="${m.img}" data-cap="${m.title} · ${m.date}"><img src="${src(m.img)}" alt="${m.title}" loading="lazy"></div>
+                <div><span class="ms-date">${m.date}</span><h4>${m.title}</h4><p>${m.text}</p>${m.q ? `<q>${m.q}</q>` : ""}</div>
+            </article>`).join("")}
+        </div>`;
+    phasesEl.appendChild(wrap);
+});
+
+/* =========================================================
+   DỰNG ALBUM
+========================================================= */
+const albumGrid = document.getElementById("albumGrid");
+ALBUM.forEach(([id, ph, cap, when]) => {
+    const f = document.createElement("figure");
+    f.dataset.phase = ph; f.dataset.id = id; f.dataset.cap = cap + (when ? " · " + when : "");
+    f.innerHTML = `<img src="${src(id)}" alt="${cap}" loading="lazy"><figcaption>${cap}${when ? `<span>${when}</span>` : ""}</figcaption>`;
+    albumGrid.appendChild(f);
+});
+document.querySelectorAll(".filter").forEach(b => b.addEventListener("click", () => {
+    document.querySelectorAll(".filter").forEach(x => x.classList.remove("active"));
+    b.classList.add("active");
+    albumGrid.querySelectorAll("figure").forEach(f => f.classList.toggle("hide", b.dataset.f !== "all" && f.dataset.phase !== b.dataset.f));
+}));
+
+/* =========================================================
+   LIGHTBOX (có nút trước / sau)
+========================================================= */
+const lb = document.getElementById("lightbox"), lbImg = document.getElementById("lbImg"), lbCap = document.getElementById("lbCap");
+let lbList = [], lbIndex = 0;
+function showLb() { const it = lbList[lbIndex]; lbImg.src = src(it.dataset.id); lbImg.alt = it.dataset.cap; lbCap.textContent = it.dataset.cap; }
+function openLb(el) {
+    const scope = el.closest(".album") ? [...albumGrid.querySelectorAll("figure:not(.hide)")] : el.closest(".milestones") ? [...el.closest(".milestones").querySelectorAll(".ms-media")] : [el];
+    lbList = scope; lbIndex = scope.indexOf(el); showLb();
+    lb.classList.add("active"); document.body.classList.add("locked");
+}
+function closeLb() { lb.classList.remove("active"); document.body.classList.remove("locked"); }
+function stepLb(d) { lbIndex = (lbIndex + d + lbList.length) % lbList.length; showLb(); }
+document.addEventListener("click", e => { const el = e.target.closest(".album figure, .ms-media, .letter-photo"); if (el) openLb(el); });
+document.getElementById("lbClose").onclick = closeLb;
+document.getElementById("lbPrev").onclick = () => stepLb(-1);
+document.getElementById("lbNext").onclick = () => stepLb(1);
+lb.addEventListener("click", e => { if (e.target === lb) closeLb(); });
+// Vuốt trái / phải trên điện thoại để chuyển ảnh
+let touchX = null;
+lb.addEventListener("touchstart", e => { touchX = e.touches[0].clientX; }, { passive: true });
+lb.addEventListener("touchend", e => {
+    if (touchX === null) return;
+    const dx = e.changedTouches[0].clientX - touchX;
+    if (Math.abs(dx) > 50) stepLb(dx < 0 ? 1 : -1);
+    touchX = null;
+});
+document.addEventListener("keydown", e => {
+    if (!lb.classList.contains("active")) return;
+    if (e.key === "Escape") closeLb();
+    if (e.key === "ArrowLeft") stepLb(-1);
+    if (e.key === "ArrowRight") stepLb(1);
+});
+
+/* =========================================================
+   MỞ THƯ
+========================================================= */
+const intro = document.getElementById("intro"), main = document.getElementById("main-content");
+document.getElementById("enterButton").addEventListener("click", () => {
+    intro.classList.add("hidden");
+    main.classList.remove("hidden");
+    document.body.classList.remove("locked");
+    burst(160);
+    startMusic();
+    document.querySelectorAll(".hero .reveal").forEach((el, i) => setTimeout(() => el.classList.add("visible"), 300 + i * 150));
+    setTimeout(countUp, 900);
+});
+
+/* =========================================================
+   THANH ĐIỀU HƯỚNG & HIỆN DẦN
+========================================================= */
+const navbar = document.querySelector(".navbar");
+addEventListener("scroll", () => navbar.classList.toggle("scrolled", scrollY > 40), { passive: true });
+
+const menuBtn = document.getElementById("menuBtn");
+function setMenu(open) {
+    main.classList.toggle("menu-open", open);
+    menuBtn.setAttribute("aria-expanded", open);
+    menuBtn.setAttribute("aria-label", open ? "Đóng menu" : "Mở menu");
+}
+menuBtn.addEventListener("click", () => setMenu(!main.classList.contains("menu-open")));
+document.querySelectorAll("#siteNav a").forEach(a => a.addEventListener("click", () => setMenu(false)));
+document.addEventListener("click", e => { if (!e.target.closest(".navbar")) setMenu(false); });
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("visible"); io.unobserve(e.target); } }), { threshold: .12 });
+document.querySelectorAll(".reveal:not(.hero .reveal), .thank, .note").forEach(el => { el.classList.add("reveal"); io.observe(el); });
+
+function countUp() {
+    document.querySelectorAll("[data-count]").forEach(el => {
+        const to = +el.dataset.count; let n = 0;
+        const t = setInterval(() => { n++; el.textContent = n; if (n >= to) clearInterval(t); }, 55);
+    });
+}
+
+/* =========================================================
+   VIDEO
+========================================================= */
+const video = document.getElementById("film-video"), vPlay = document.getElementById("videoPlay");
+vPlay.onclick = () => { video.play(); };
+video.addEventListener("play", () => vPlay.classList.add("gone"));
+video.addEventListener("pause", () => { if (!video.seeking) vPlay.classList.remove("gone"); });
+
+/* =========================================================
+   NHẠC NỀN — phát từ lúc mở thư, tự tạm dừng khi xem video
+========================================================= */
+const music = document.getElementById("bgMusic"), musicBtn = document.getElementById("musicBtn");
+let musicWanted = false;   // người xem muốn nghe nhạc hay không
+music.volume = .45;
+function syncMusicBtn() {
+    const on = !music.paused;
+    musicBtn.classList.toggle("playing", on);
+    musicBtn.setAttribute("aria-pressed", on);
+}
+function startMusic() {
+    musicWanted = true;
+    music.play().catch(() => {}).finally(syncMusicBtn);
+}
+music.addEventListener("play", syncMusicBtn);
+music.addEventListener("pause", syncMusicBtn);
+musicBtn.addEventListener("click", () => {
+    if (music.paused) { startMusic(); }
+    else { musicWanted = false; music.pause(); }
+});
+video.addEventListener("play", () => { if (!music.paused) music.pause(); });
+video.addEventListener("pause", () => { if (musicWanted && !video.seeking) music.play().catch(() => {}); });
+video.addEventListener("ended", () => { if (musicWanted) music.play().catch(() => {}); });
+
+/* =========================================================
+   LỜI CHÚC (lưu trên trình duyệt)
+========================================================= */
+const wall = document.getElementById("wall");
+const esc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;" }[c]));
+function addNote(w, scroll) {
+    const n = document.createElement("div");
+    n.className = "note reveal visible " + (w.color || "c1");
+    n.style.transform = `rotate(${(Math.random() * 6 - 3).toFixed(1)}deg)`;
+    n.innerHTML = `<span class="tag">${esc((w.cls || "SINH VIÊN").toUpperCase())}</span><p>“${esc(w.msg)}”</p><small>— ${esc(w.name)}</small>`;
+    wall.appendChild(n);
+    if (scroll) n.scrollIntoView({ behavior: "smooth", block: "center" });
+}
+function loadWishes() { try { return JSON.parse(localStorage.getItem("qtkd20Wishes") || "[]"); } catch { return []; } }
+loadWishes().forEach(w => addNote(w));
+document.getElementById("wishForm").addEventListener("submit", e => {
+    e.preventDefault();
+    const w = { name: wName.value.trim(), cls: wClass.value.trim(), msg: wMsg.value.trim(), color: document.querySelector("input[name=wColor]:checked").value };
+    if (!w.name || !w.msg) return;
+    addNote(w, true);
+    try { const all = loadWishes(); all.push(w); localStorage.setItem("qtkd20Wishes", JSON.stringify(all)); } catch {}
+    e.target.reset();
+    burst(90);
+});
+
+/* =========================================================
+   LẤP LÁNH NỀN (ngôi sao 4 cánh như logo BAV)
+========================================================= */
+const sc = document.getElementById("sparkles"), sx = sc.getContext("2d");
+let stars = [];
+function sizeSc() { sc.width = innerWidth; sc.height = innerHeight; }
+sizeSc(); addEventListener("resize", sizeSc);
+for (let i = 0; i < (innerWidth < 700 ? 22 : 45); i++) stars.push({ x: Math.random(), y: Math.random(), r: Math.random() * 5 + 2, p: Math.random() * 6.28, s: Math.random() * .02 + .008, gold: Math.random() > .35 });
+function star(ctx, x, y, r) {
+    ctx.beginPath(); ctx.moveTo(x, y - r);
+    ctx.quadraticCurveTo(x, y, x + r, y); ctx.quadraticCurveTo(x, y, x, y + r);
+    ctx.quadraticCurveTo(x, y, x - r, y); ctx.quadraticCurveTo(x, y, x, y - r); ctx.fill();
+}
+function drawStars() {
+    sx.clearRect(0, 0, sc.width, sc.height);
+    stars.forEach(s => {
+        s.p += s.s; const a = (Math.sin(s.p) + 1) / 2;
+        sx.fillStyle = s.gold ? `rgba(247,168,35,${a * .55})` : `rgba(61,64,160,${a * .25})`;
+        star(sx, s.x * sc.width, s.y * sc.height, s.r * (.6 + a * .4));
+    });
+    requestAnimationFrame(drawStars);
+}
+drawStars();
+
+/* =========================================================
+   PHÁO GIẤY
+========================================================= */
+const cf = document.getElementById("confetti"), cx = cf.getContext("2d");
+let bits = [];
+function sizeCf() { cf.width = innerWidth; cf.height = innerHeight; }
+sizeCf(); addEventListener("resize", sizeCf);
+const COLORS = ["#f7a823", "#ffc94d", "#2b2d72", "#3d40a0", "#ff8fa3", "#7fd1ae", "#ffffff"];
+function burst(n) {
+    for (let i = 0; i < n; i++) bits.push({
+        x: innerWidth / 2 + (Math.random() - .5) * 200, y: innerHeight * .55,
+        vx: (Math.random() - .5) * 16, vy: -Math.random() * 16 - 6,
+        w: Math.random() * 8 + 5, h: Math.random() * 5 + 4, r: Math.random() * 6, vr: (Math.random() - .5) * .3,
+        c: COLORS[Math.floor(Math.random() * COLORS.length)], life: 0, star: Math.random() > .8
+    });
+    if (bits.length === n) requestAnimationFrame(tick);
+}
+function tick() {
+    cx.clearRect(0, 0, cf.width, cf.height);
+    bits.forEach(b => {
+        b.vy += .35; b.vx *= .99; b.x += b.vx; b.y += b.vy; b.r += b.vr; b.life++;
+        cx.save(); cx.translate(b.x, b.y); cx.rotate(b.r); cx.fillStyle = b.c;
+        if (b.star) star(cx, 0, 0, b.w); else cx.fillRect(-b.w / 2, -b.h / 2, b.w, b.h);
+        cx.restore();
+    });
+    bits = bits.filter(b => b.y < innerHeight + 40 && b.life < 400);
+    if (bits.length) requestAnimationFrame(tick); else cx.clearRect(0, 0, cf.width, cf.height);
+}
+document.getElementById("celebrate").addEventListener("click", () => { burst(220); setTimeout(() => burst(140), 450); });
+</script>
+</body>
+</html>
