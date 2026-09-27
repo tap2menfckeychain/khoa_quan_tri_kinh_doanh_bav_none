@@ -1052,5 +1052,22 @@ function tick() {
 }
 document.getElementById("celebrate").addEventListener("click", () => { burst(220); setTimeout(() => burst(140), 450); });
 </script>
+   <script>
+    // Hàm tự động cuộn trang
+    function autoScroll() {
+        // Tự động cuộn xuống dưới 1 pixel mỗi lần
+        window.scrollBy(0, 1); 
+        
+        // Nếu muốn cuộn mượt và liên tục, dùng requestAnimationFrame
+        requestAnimationFrame(autoScroll);
+    }
+
+    // Đợi trang tải xong thì sau 2 giây (2000ms) sẽ bắt đầu tự động lướt
+    window.onload = function() {
+        setTimeout(function() {
+            autoScroll();
+        }, 2000);
+    };
+</script>
 </body>
 </html>
